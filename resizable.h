@@ -22,7 +22,7 @@ private:
     QRect *draggableArea;
     QPoint previousMousePosition;
     int startWidth;
-    bool resizeStarted;
+    bool resizeStarted = false;
 };
 
 #endif // RESIZABLE_H
