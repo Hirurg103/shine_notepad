@@ -12,6 +12,9 @@ public:
     explicit Resizable(QWidget *parent = 0);
     ~Resizable();
 
+signals:
+    void widthChanged(int );
+
 protected:
     void mousePressEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent *);
