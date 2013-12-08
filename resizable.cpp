@@ -46,7 +46,7 @@ void Resizable::mouseReleaseEvent(QMouseEvent *event) {
 void Resizable::resizeEvent(QResizeEvent *) {
     draggableArea = new QRect(
         rect().width() - 5 ,
-        0,
+        rect().y(),
         5,
         rect().height()
     );
