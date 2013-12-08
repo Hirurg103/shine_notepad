@@ -21,12 +21,8 @@ void Resizable::mouseMoveEvent(QMouseEvent *event) {
     if(resizeStarted) {
         int delta = event->pos().x() - previousMousePosition.x();
         previousMousePosition = event->pos();
-        if(delta == 0) return;
-        int newWidth = geometry().width() + delta;
-        if(newWidth > 0) {
-            setFixedWidth(newWidth);
-            emit widthChanged(newWidth);
-        }
+        if(geometry().width() + delta > 0)
+            setFixedWidth(geometry().width() + delta);
     } else {
         if(draggableArea->contains(event->pos())) {
             setCursor(Qt::SizeHorCursor);
