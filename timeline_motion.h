@@ -4,7 +4,7 @@
 #include <QWidget>
 #include "movable.h"
 
-class TimelineMotion : public QWidget
+class TimelineMotion : public Movable
 {
     Q_OBJECT
 
@@ -21,6 +21,8 @@ private slots:
 
 protected:
     void resizeEvent(QResizeEvent *);
+    void mousePressEvent(QMouseEvent *);
+    void mouseReleaseEvent(QMouseEvent *);
 
 private:
     void setMovablePos();

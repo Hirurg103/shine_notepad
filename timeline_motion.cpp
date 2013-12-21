@@ -1,11 +1,12 @@
 #include "timeline_motion.h"
 
 TimelineMotion::TimelineMotion(QWidget *parent) :
-    QWidget(parent)
+    Movable(parent)
 {
     p_movable = new Movable(this);
     p_movable->setFixedWidth(maxMovableWidth);
     setMovablePos();
+    setCursor(Qt::OpenHandCursor);
     connect(p_movable, SIGNAL(positionChanged(QPoint *)), this, SLOT(changeSize(QPoint *)));
 }
 
@@ -31,6 +32,16 @@ void TimelineMotion::resizeEvent(QResizeEvent *event) {
         p_movable->setFixedWidth(maxMovableWidth);
 
     setMovablePos();
+}
+
+void TimelineMotion::mousePressEvent(QMouseEvent *event) {
+    Movable::mousePressEvent(event);
+    setCursor(Qt::ClosedHandCursor);
+}
+
+void TimelineMotion::mouseReleaseEvent(QMouseEvent *event) {
+    Movable::mouseReleaseEvent(event);
+    setCursor(Qt::OpenHandCursor);
 }
 
 void TimelineMotion::setMovablePos() {
