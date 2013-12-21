@@ -1,16 +1,16 @@
-#ifndef RESIZABLE_H
-#define RESIZABLE_H
+#ifndef TIMELINE_MOTION
+#define TIMELINE_MOTION
 
 #include <QWidget>
 #include "movable.h"
 
-class Resizable : public QWidget
+class TimelineMotion : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Resizable(QWidget *parent = 0);
-    ~Resizable();
+    explicit TimelineMotion(QWidget *parent = 0);
+    ~TimelineMotion();
     Movable *movable(void);
 
 signals:
@@ -31,4 +31,4 @@ private:
     QSize *newSize;
 };
 
-#endif // RESIZABLE_H
+#endif // TIMELINE_MOTION_H
