@@ -11,8 +11,8 @@ TimelineMotion::TimelineMotion(QWidget *parent) :
 }
 
 TimelineMotion::~TimelineMotion() {
-    delete p_movable;
     delete newSize;
+    delete p_movable;
 }
 
 void TimelineMotion::changeSize(QPoint *delta) {
